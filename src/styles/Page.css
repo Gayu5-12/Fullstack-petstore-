@@ -1,0 +1,36 @@
+/*.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f7fbff;
+}
+
+.page-wrapper {
+  flex: 1;
+}
+
+.page-section {
+  padding: 4rem 1.5rem;
+  color: #102a43;
+}
+
+.page-section.hero-page {
+  background: linear-gradient(135deg, #05668d 0%, #028090 100%);
+  color: #ffffff;
+}
+
+.page-section h1 {
+  margin-bottom: 1rem;
+  font-size: clamp(2rem, 2.5vw, 3rem);
+}
+
+.page-section p {
+  max-width: 38rem;
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+}*/

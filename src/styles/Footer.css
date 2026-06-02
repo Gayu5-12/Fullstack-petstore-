@@ -1,0 +1,17 @@
+/*.footer {
+  padding: 1.25rem 2rem;
+  background: #022f40;
+  color: #cbe7f2;
+}
+
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.95rem;
+}*/
