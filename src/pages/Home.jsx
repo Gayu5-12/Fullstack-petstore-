@@ -1035,11 +1035,18 @@ function Home() {
               <div className="footer-brand-name">🐾 Pet Paws</div>
               <p className="footer-brand-desc">Bringing premium pet adoption, verified health tracking, clinical medicine access, and safe home workflows to pet parents everywhere.</p>
               <div className="footer-social">
-                <a href="#" className="soc-btn"><i className="fa-brands fa-instagram" /></a>
-                <a href="#" className="soc-btn"><i className="fa-brands fa-facebook" /></a>
-                {/*<a href="#" className="soc-btn"><i className="fa-brands fa-x-twitter" /></a>*/}
-                <a href="#" className="soc-btn"><i className="fa-brands fa-youtube" /></a>
-              </div>
+  <a href="https://instagram.com" className="soc-btn" target="_blank" rel="noreferrer">
+    <i className="fa-brands fa-instagram" />
+  </a>
+
+  <a href="https://facebook.com" className="soc-btn" target="_blank" rel="noreferrer">
+    <i className="fa-brands fa-facebook" />
+  </a>
+
+  <a href="https://youtube.com" className="soc-btn" target="_blank" rel="noreferrer">
+    <i className="fa-brands fa-youtube" />
+  </a>
+</div>
             </div>
             <div className="footer-col">
               <h6>Navigation</h6>
