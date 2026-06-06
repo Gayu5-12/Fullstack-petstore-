@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+/* Style Variables mapped directly from your brand palette */
+:root {
+  --ap-bg: #fff8f6;
+  --ap-card-bg: #ffffff;
+  --ap-text-dark: #2b1f1a;
+  --ap-text-muted: #7a6258;
+  --ap-brand-accent: #9e5a46;
+  --ap-brand-light: #c98d7d;
+  --ap-card-tint: #fcedea;
+  --ap-border: #edd8c8;
+}
+
+.ap-page {
+  min-height: 100vh;
+  background-color: var(--ap-bg);
+  color: var(--ap-text-dark);
+  font-family: 'DM Sans', sans-serif;
+  padding: 60px 24px;
+  box-sizing: border-box;
+}
+
+.ap-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Header Component styling */
+.ap-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.ap-brand-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--ap-text-dark);
+  margin-bottom: 8px;
+}
+
+.ap-highlight {
+  color: var(--ap-brand-accent);
+}
+
+.ap-tagline {
+  font-style: italic;
+  font-size: 15px;
+  color: var(--ap-text-muted);
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Base Sections Layout */
+.ap-section {
+  background-color: var(--ap-card-bg);
+  border-radius: 16px;
+  padding: 40px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 24px rgba(138, 77, 58, 0.05);
+}
+
+/* Section Title Typography */
+.ap-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--ap-brand-accent);
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.ap-center-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--ap-text-dark);
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 28px;
+}
+
+/* Identity Split Panel */
+.ap-identity-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.ap-identity-text p {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--ap-text-muted);
+  margin-bottom: 16px;
+}
+
+.ap-identity-text p:last-child {
+  margin-bottom: 0;
+}
+
+.ap-identity-image-wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+}
+
+.ap-identity-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* Mission & Vision Blocks side by side */
+.ap-mv-grid {
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.ap-mv-card {
+  background-color: var(--ap-card-tint);
+  border-radius: 14px;
+  padding: 30px;
+  border: 1px solid rgba(201, 141, 125, 0.15);
+}
+
+.ap-mv-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--ap-brand-accent);
+  margin-top: 0;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ap-mv-card p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--ap-text-muted);
+  margin: 0;
+}
+
+/* Numeric Metrics Board */
+.ap-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.ap-metric-box {
+  background-color: var(--ap-brand-light);
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 20px 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ap-metric-number {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.ap-metric-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  opacity: 0.9;
+}
+
+/* Strategic Milestones Timeline layout */
+.ap-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.ap-timeline-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.ap-timeline-badge {
+  background-color: var(--ap-card-tint);
+  color: var(--ap-brand-accent);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+  border: 1px solid var(--ap-border);
+}
+
+.ap-timeline-content h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ap-text-dark);
+  margin: 4px 0 4px 0;
+}
+
+.ap-timeline-content p {
+  font-size: 12.5px;
+  color: var(--ap-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Leadership Team profiles grid */
+.ap-team-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.ap-team-card {
+  text-align: center;
+  max-width: 240px;
+  background: var(--ap-bg);
+  padding: 24px 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(237, 216, 200, 0.4);
+}
+
+.ap-team-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 14px;
+  border: 2px solid var(--ap-border);
+}
+
+.ap-team-card h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ap-brand-accent);
+  margin: 0 0 4px 0;
+}
+
+.ap-team-role {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ap-text-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 0 0 10px 0;
+}
+
+.ap-team-bio {
+  font-size: 12px;
+  color: var(--ap-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Center Bottom Action Button wrapper */
+.ap-footer-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.ap-back-btn {
+  background-color: var(--ap-text-dark);
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.ap-back-btn:hover {
+  background-color: var(--ap-brand-accent);
+  transform: translateY(-1px);
+}
+
+/* Adaptive mobile rules */
+@media (max-width: 768px) {
+  .ap-identity-grid, .ap-mv-grid {
+    grid-template-columns: 1fr;
+  }
+  .ap-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ap-section {
+    padding: 24px;
+  }
+}

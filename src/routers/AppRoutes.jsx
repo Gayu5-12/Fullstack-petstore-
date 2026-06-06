@@ -16,6 +16,10 @@ import Privacy from "../pages/Privacy";
 import Profile from "../pages/Profile";
 import Signup from "../pages/Signup";
 import Terms from "../pages/Terms";
+import AnimalAbuse from "../pages/AnimalAbuse";
+import PetVaccination from "../pages/PetVaccination";
+import PetNutrition from "../pages/PetNutrition";
+import Sell from "../pages/Sell";
 
 function AppRoutes() {
   return (
@@ -27,6 +31,7 @@ function AppRoutes() {
         <Route path="accessories" element={<Accessories />} />
         <Route path="admin" element={<Admin />} />
         <Route path="adopt" element={<Adopt />} />
+        <Route path="sell" element={<Sell />} />
         <Route path="auth-gateway" element={<AuthGateway />} />
         <Route path="contact" element={<Contact />} />
         <Route path="faq" element={<Faq />} />
@@ -38,6 +43,9 @@ function AppRoutes() {
         <Route path="profile" element={<Profile />} />
         <Route path="signup" element={<Signup />} />
         <Route path="terms" element={<Terms />} />
+        <Route path="animal-abuse" element={<AnimalAbuse />} />
+        <Route path="pet-vaccination" element={<PetVaccination />} />
+        <Route path="pet-nutrition" element={<PetNutrition />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>

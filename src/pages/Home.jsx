@@ -37,101 +37,13 @@ const styles = `
   ::-webkit-scrollbar-track { background: var(--sand); }
   ::-webkit-scrollbar-thumb { background: var(--clay); border-radius: 99px; }
 
-  .nav-wrap {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    padding: 0;
-    width: 100%;
-    transition: background var(--transition), box-shadow var(--transition);
-  }
-  .nav-wrap.scrolled {
-    background: rgba(249,242,234,0.96);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 2px 20px rgba(43,31,26,0.08);
-  }
-  .nav-inner {
-    width: 100%;
-    max-width: 2280px;
-    margin: 0 auto;
-    padding: 18px 40px;
-    display: flex; align-items: center; justify-content: space-between; gap: 20px;
-  }
-  .nav-brand {
-    font-family: var(--ff-display);
-    font-size: 24px; font-weight: 900;
-    color: var(--clay-dark);
-    text-decoration: none;
-    display: flex; align-items: center; gap: 8px;
-  }
-  .nav-links {
-    display: flex; align-items: center; gap: 6px;
-    list-style: none; margin: 0; padding: 0;
-  }
-  .nav-links a {
-    font-size: 14px; font-weight: 500;
-    color: var(--muted);
-    text-decoration: none;
-    padding: 7px 14px;
-    border-radius: var(--radius-pill);
-    transition: color var(--transition), background var(--transition);
-  }
-  .nav-links a:hover, .nav-links a.active {
-    color: var(--clay-dark);
-    background: var(--biscuit);
-  }
-  .btn-nav-cta {
-    background: var(--clay) !important;
-    color: var(--white) !important;
-    padding: 9px 22px !important;
-    border-radius: var(--radius-pill) !important;
-    font-weight: 600 !important;
-    text-decoration: none;
-    display: inline-block;
-    transition: background var(--transition), box-shadow var(--transition), transform var(--transition) !important;
-  }
-  .btn-nav-cta:hover {
-    background: var(--clay-dark) !important;
-    box-shadow: var(--shadow-btn);
-    transform: translateY(-2px);
-  }
-  .auth-zone { display: flex; align-items: center; gap: 10px; }
-
-  .hamburger {
-    display: none;
-    background: none; border: none; cursor: pointer;
-    flex-direction: column; gap: 5px; padding: 4px;
-  }
-  .hamburger span {
-    display: block; width: 22px; height: 2px;
-    background: var(--clay-dark);
-    border-radius: 2px;
-    transition: var(--transition);
-  }
-  .mobile-menu {
-    display: none;
-    flex-direction: column;
-    background: rgba(249,242,234,0.98);
-    backdrop-filter: blur(12px);
-    padding: 20px 30px 30px;
-    gap: 4px;
-    border-top: 1px solid var(--biscuit);
-  }
-  .mobile-menu.open { display: flex; }
-  .mobile-menu a {
-    font-size: 15px; font-weight: 500;
-    color: var(--muted); text-decoration: none;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--biscuit);
-    transition: color var(--transition);
-  }
-  .mobile-menu a:hover { color: var(--clay-dark); }
-
   .hero {
     min-height: 100vh;
     background: var(--clay-pale);
     display: flex; align-items: center;
     position: relative;
     overflow: hidden;
-    padding: 140px 40px 80px;
+    padding: 80px 40px 80px;
   }
   .hero::before {
     content: '';
@@ -662,8 +574,6 @@ const styles = `
 `;
 
 function Home() {
-  const [navScrolled, setNavScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const navigate = useNavigate();
@@ -694,10 +604,6 @@ function Home() {
     setIsLoggedIn(localStorage.getItem("loggedIn") === "true");
     setIsAdmin(localStorage.getItem("isAdmin") === "true");
 
-    // Scroll listener
-    const onScroll = () => setNavScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll);
-
     // Scroll reveal
     const revealObserver = new IntersectionObserver(
       (entries) => {
@@ -714,7 +620,6 @@ function Home() {
     document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
 
     return () => {
-      window.removeEventListener("scroll", onScroll);
       revealObserver.disconnect();
       document.head.removeChild(styleEl);
     };
@@ -738,62 +643,6 @@ function Home() {
 
   return (
     <div>
-      {/* ── NAV ── */}
-      <div className={`nav-wrap${navScrolled ? " scrolled" : ""}`}>
-        <div className="nav-inner">
-          <Link to="/" className="nav-brand">
-            <span className="paw">🐾</span> Pet Paws
-          </Link>
-          <ul className="nav-links">
-            <li><Link to="/" className="active">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/petcare">Pet Care</Link></li>
-            <li><Link to="/medicine">Pet Medicine</Link></li>
-            <li><Link to="/accessories">Accessories</Link></li>
-            <li><Link to="/adopt">Adopt</Link></li>
-            <li><Link to="/sell">Sell a Pet</Link></li>
-          </ul>
-          <div className="auth-zone">
-            {isLoggedIn ? (
-              <div className="dropdown">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-                  className="dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  style={{ width: 38, height: 38, cursor: "pointer", borderRadius: "50%", border: "2px solid var(--clay)" }}
-                  alt="Profile"
-                />
-                <ul className="dropdown-menu dropdown-menu-end shadow-lg" style={{ borderRadius: 16, border: "none", padding: 8 }}>
-                  <li><Link className="dropdown-item" to="/profile" style={{ borderRadius: 10 }}><i className="fa-solid fa-user me-2"></i>Profile Dashboard</Link></li>
-                  {isAdmin && (
-                    <li><Link className="dropdown-item text-danger" to="/admin" style={{ borderRadius: 10 }}><i className="fa-solid fa-gauge me-2"></i>Admin Panel</Link></li>
-                  )}
-                  <li><hr className="dropdown-divider" /></li>
-                  <li>
-                    <button className="dropdown-item" style={{ borderRadius: 10 }} onClick={handleLogout}>Logout</button>
-                  </li>
-                </ul>
-              </div>
-            ) : (
-              <Link to="/auth-gateway" className="btn-nav-cta">Sign In</Link>
-            )}
-          </div>
-          <button className="hamburger" onClick={() => setMenuOpen((o) => !o)} aria-label="Menu">
-            <span /><span /><span />
-          </button>
-        </div>
-        <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
-          <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
-          <Link to="/petcare" onClick={() => setMenuOpen(false)}>Pet Care</Link>
-          <Link to="/medicine" onClick={() => setMenuOpen(false)}>Pet Medicine</Link>
-          <Link to="/accessories" onClick={() => setMenuOpen(false)}>Accessories</Link>
-          <Link to="/adopt" onClick={() => setMenuOpen(false)}>Adopt</Link>
-          <Link to="/sell" onClick={() => setMenuOpen(false)}>Sell a Pet</Link>
-          <Link to="/auth-gateway" style={{ color: "var(--clay-dark)", fontWeight: 700, border: "none", marginTop: 8 }} onClick={() => setMenuOpen(false)}>Sign In</Link>
-        </div>
-      </div>
-
       {/* ── HERO ── */}
       <header className="hero">
         <div className="hero-ring hero-ring-1" />
@@ -914,7 +763,7 @@ function Home() {
           </button>
         </div>
       </div>
-
+      
       {/* ── VALUES ── */}
       <section className="values">
         <div className="values-inner">
