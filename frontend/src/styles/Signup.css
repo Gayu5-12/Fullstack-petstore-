@@ -1,0 +1,36 @@
+/* Scoped Sign-Up Page Container styling variables */
+.su-page {
+  min-height: 100vh;
+  background-color: #fff8f6;
+  font-family: 'Georgia', serif;
+  display: flex;
+  align-items: center;
+}
+
+/* Card Element sizing constraints overriding standard values */
+.su-card {
+  max-width: 400px;
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+
+/* Heading Brand Color Mapping */
+.su-title {
+  color: #8a4d3a;
+}
+
+/* Primary Action Button Customizations */
+.su-submit-btn {
+  background-color: #c98d7d;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.su-submit-btn:hover {
+  background-color: #1a0f0b; /* Blends cleanly with dark tones when hovered over */
+  color: #ffffff !important;
+}
+
+.su-submit-btn:active {
+  transform: scale(0.98);
+}

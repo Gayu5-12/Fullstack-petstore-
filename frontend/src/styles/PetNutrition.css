@@ -1,0 +1,365 @@
+:root {
+  --clay: #C97B63;
+  --clay-dark: #9E5A46;
+  --clay-pale: #F5E6DE;
+  --sand: #F9F2EA;
+  --biscuit: #EDD8C8;
+  --ink: #2B1F1A;
+  --muted: #7A6258;
+  --white: #FFFFFF;
+  --radius: 16px;
+  --radius-pill: 50px;
+  --shadow: 0 6px 30px rgba(43, 31, 26, 0.09);
+  --trans: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.nutrition-page {
+  background: var(--sand);
+  color: var(--ink);
+}
+
+/* Hero */
+.nut-hero {
+  background: linear-gradient(135deg, #6ECE93 0%, #3DAA6E 100%);
+  color: var(--white);
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.nut-hero-content h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+  font-family: "Playfair Display", serif;
+}
+
+.nut-hero-content p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Container */
+.nut-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Sections */
+.nut-section {
+  padding: 70px 40px;
+}
+
+.nut-section-alt {
+  background: var(--white);
+}
+
+.nut-section h2 {
+  font-size: clamp(1.8rem, 4vw, 2.3rem);
+  font-weight: 900;
+  margin-bottom: 3rem;
+  font-family: "Playfair Display", serif;
+  color: var(--ink);
+  text-align: center;
+}
+
+/* Grid */
+.nut-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.nut-card {
+  background: var(--sand);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  transition: all var(--trans);
+  border: 1px solid transparent;
+}
+
+.nut-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow);
+  border-color: var(--clay-pale);
+}
+
+.nut-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.nut-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--clay-dark);
+  margin-bottom: 0.75rem;
+}
+
+.nut-card p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Nutrients Grid */
+.nutrients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.nutrient-card {
+  background: var(--sand);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  border-left: 4px solid var(--clay);
+  transition: all var(--trans);
+}
+
+.nutrient-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.nutrient-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.nutrient-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--clay-dark);
+  margin: 0;
+}
+
+.nutrient-badge {
+  background: var(--clay);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+.nutrient-body p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+/* Diet Selector */
+.diet-selector {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 3rem;
+}
+
+.diet-btn {
+  background: var(--white);
+  color: var(--clay-dark);
+  border: 2px solid var(--biscuit);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-pill);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--trans);
+}
+
+.diet-btn:hover {
+  border-color: var(--clay);
+  transform: translateY(-2px);
+}
+
+.diet-btn.active {
+  background: var(--clay);
+  color: var(--white);
+  border-color: var(--clay);
+}
+
+/* Diet Plan */
+.diet-plan {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.diet-plan h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--clay-dark);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.diet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.diet-card {
+  background: var(--sand);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  border-top: 4px solid var(--clay);
+  transition: all var(--trans);
+}
+
+.diet-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.diet-card h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--clay-dark);
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+.diet-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.diet-card li {
+  color: var(--muted);
+  padding: 0.5rem 0;
+  line-height: 1.6;
+  border-bottom: 1px solid var(--biscuit);
+}
+
+.diet-card li:last-child {
+  border-bottom: none;
+}
+
+/* Tips List */
+.tips-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.tip-item {
+  background: var(--sand);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  border-left: 4px solid var(--clay);
+  transition: all var(--trans);
+}
+
+.tip-item:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.tip-item p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* CTA */
+.nut-cta {
+  background: linear-gradient(135deg, #3DAA6E 0%, #2A8A5F 100%);
+  color: var(--white);
+  padding: 70px 40px;
+  text-align: center;
+}
+
+.nut-cta h2 {
+  font-size: clamp(1.8rem, 4vw, 2.3rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+  font-family: "Playfair Display", serif;
+}
+
+.nut-cta p {
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.95;
+}
+
+.nut-cta-btn {
+  background: var(--white);
+  color: #3DAA6E;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: var(--radius-pill);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--trans);
+}
+
+.nut-cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nut-section {
+    padding: 50px 20px;
+  }
+
+  .nut-container {
+    padding: 0 20px;
+  }
+
+  .nut-hero {
+    padding: 60px 20px;
+  }
+
+  .nut-grid,
+  .nutrients-grid,
+  .diet-grid,
+  .tips-list {
+    grid-template-columns: 1fr;
+  }
+
+  .diet-selector {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .diet-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .nut-cta {
+    padding: 50px 20px;
+  }
+}

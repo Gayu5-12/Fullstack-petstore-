@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+  --clay:       #C97B63;
+  --clay-dark:  #9E5A46;
+  --clay-pale:  #F5E6DE;
+  --sand:       #F9F2EA;
+  --biscuit:    #EDD8C8;
+  --ink:        #2B1F1A;
+  --muted:      #7A6258;
+  --white:      #FFFFFF;
+  --radius-lg:   28px;
+  --radius-sm:   12px;
+  --radius-pill: 50px;
+  --shadow-card: 0 8px 40px rgba(43, 31, 26, 0.10);
+  --shadow-btn:  0 10px 30px rgba(201, 123, 99, 0.35);
+  --ff-display:  'Playfair Display', serif;
+  --ff-body:     'DM Sans', sans-serif;
+  --transition:  0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ====== GLOBAL ALIGNMENT DEFAULTS ====== */
+body {
+  font-family: var(--ff-body);
+  color: var(--ink);
+  background-color: var(--sand);
+}
+
+h1, h2, h3, h4, .display-4 {
+  font-family: var(--ff-display);
+  color: var(--ink);
+}
+
+/* ====== PET CARE MAIN LAYOUT ====== */
+.petcare-page {
+  background: linear-gradient(135deg, var(--sand) 0%, var(--biscuit) 100%) !important;
+  font-family: var(--ff-body);
+}
+
+.petcare-hero {
+  border-radius: var(--radius-lg) !important;
+  border: 1px solid rgba(43, 31, 26, 0.1);
+  overflow: hidden;
+}
+
+.petcare-hero h1 {
+  font-family: var(--ff-display);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.petcare-hero p {
+  font-family: var(--ff-body);
+  color: var(--sand);
+}
+
+/* ====== SYSTEM CARD GRID INFRASTRUCTURE ====== */
+.card {
+  background-color: var(--white) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-card);
+  border: 2px solid transparent !important;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--clay) !important;
+  box-shadow: 0 15px 45px rgba(201, 123, 99, 0.18);
+}
+
+.card.border-primary {
+  border-color: var(--clay-dark) !important;
+  background-color: var(--white) !important;
+}
+
+.badge.bg-light {
+  background-color: var(--clay-pale) !important;
+  color: var(--clay-dark) !important;
+  border-radius: var(--radius-pill) !important;
+  font-weight: 700;
+  font-family: var(--ff-body);
+  border: none !important;
+}
+
+.text-primary {
+  color: var(--clay) !important;
+  font-family: var(--ff-body);
+}
+
+/* Interactive Accordion Slidedown Keyframe */
+.border-top {
+  border-top: 1px solid var(--biscuit) !important;
+  animation: slideDown 0.35s var(--transition);
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====== GUIDELINES STATION & CHAT STAGE ====== */
+.bg-light {
+  background-color: var(--sand) !important;
+}
+
+.alert-warning {
+  background-color: var(--clay-pale) !important;
+  border-left: 5px solid var(--clay) !important;
+  color: var(--ink) !important;
+  border-radius: var(--radius-sm);
+}
+
+.border-start.border-warning {
+  border-left-color: var(--clay) !important;
+  background-color: var(--white) !important;
+  border-top: 1px solid var(--biscuit);
+  border-right: 1px solid var(--biscuit);
+  border-bottom: 1px solid var(--biscuit);
+}
+
+/* Live Simulation Messenger Box */
+.bg-dark {
+  background-color: var(--ink) !important;
+}
+
+.bg-dark .text-warning {
+  color: var(--biscuit) !important;
+}
+
+.max-width-75 {
+  border-radius: var(--radius-lg);
+}
+
+/* Chat bubble styling dynamics */
+.bg-warning.text-dark {
+  background-color: var(--clay) !important;
+  color: var(--white) !important;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 var(--radius-lg) !important;
+  box-shadow: var(--shadow-btn);
+}
+
+.bg-white.text-dark {
+  background-color: var(--white) !important;
+  color: var(--ink) !important;
+  border: 1px solid var(--biscuit);
+  border-radius: var(--radius-lg) var(--radius-lg) var(--radius-lg) 0 !important;
+}
+
+/* ====== COMPONENT INTERACTIVE ACTION BUTTONS ====== */
+.btn-warning {
+  background-color: var(--clay) !important;
+  color: var(--white) !important;
+  border: none !important;
+  border-radius: var(--radius-pill) !important;
+  transition: var(--transition);
+  box-shadow: var(--shadow-btn);
+  font-family: var(--ff-body);
+}
+
+.btn-warning:hover {
+  background-color: var(--clay-dark) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(158, 90, 70, 0.45);
+}
+
+.btn-outline-secondary {
+  color: var(--muted) !important;
+  border: 2px solid var(--biscuit) !important;
+  background-color: transparent !important;
+  border-radius: var(--radius-pill) !important;
+  transition: var(--transition);
+  font-family: var(--ff-body);
+  font-weight: 600;
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--clay-pale) !important;
+  border-color: var(--clay) !important;
+  color: var(--clay-dark) !important;
+}
+
+.btn-dark {
+  background-color: var(--ink) !important;
+  color: var(--white) !important;
+  border-radius: var(--radius-pill) !important;
+  border: none;
+  transition: var(--transition);
+}
+
+.btn-dark:hover {
+  background-color: var(--clay-dark) !important;
+}
+
+/* ====== GLOBAL FORM ELEMENTS & BOOKING MODAL ====== */
+.modal-content {
+  background-color: var(--white) !important;
+  border-radius: var(--radius-lg) !important;
+  border: none !important;
+  box-shadow: 0 20px 50px rgba(43, 31, 26, 0.25);
+}
+
+.modal-header {
+  background: var(--ink) !important;
+  border-bottom: 1px solid var(--muted) !important;
+}
+
+.form-control, .form-select {
+  background-color: var(--sand) !important;
+  border: 2px solid var(--biscuit) !important;
+  color: var(--ink) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 10px 14px;
+  transition: var(--transition);
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--clay) !important;
+  box-shadow: 0 0 0 4px var(--clay-pale) !important;
+  outline: none;
+}
+
+.btn-success {
+  background-color: var(--clay-dark) !important;
+  color: var(--white) !important;
+  border: none !important;
+  border-radius: var(--radius-pill) !important;
+  transition: var(--transition);
+  font-family: var(--ff-body);
+}
+
+.btn-success:hover {
+  background-color: var(--ink) !important;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--biscuit) !important;
+  color: var(--ink) !important;
+  border: none !important;
+  border-radius: var(--radius-pill) !important;
+}
+
+.btn-secondary:hover {
+  background-color: var(--muted) !important;
+  color: var(--white) !important;
+}
+
+/* ====== MEDICINE SPECIFIC ELEMENTS ====== */
+.medicine-hero {
+  background: linear-gradient(135deg, var(--clay) 0%, var(--clay-dark) 100%) !important;
+}
+
+.category-badge {
+  border: 2px solid var(--clay) !important;
+  color: var(--clay-dark) !important;
+  background: var(--white);
+  font-family: var(--ff-body);
+  border-radius: var(--radius-pill);
+}
+
+.category-badge.active, .category-badge:hover {
+  background: var(--clay) !important;
+  color: var(--white) !important;
+  box-shadow: var(--shadow-btn);
+}
+
+.medicine-card:hover {
+  box-shadow: 0 15px 40px rgba(201, 123, 99, 0.2);
+  border-color: var(--biscuit);
+}
+
+.medicine-category, .medicine-price, .medicine-dosage {
+  color: var(--clay-dark) !important;
+}
+
+.medicine-dosage {
+  background: var(--clay-pale) !important;
+}
+
+.btn-buy {
+  background: linear-gradient(135deg, var(--clay) 0%, var(--clay-dark) 100%) !important;
+}
+
+.btn-add-cart {
+  background: var(--white) !important;
+  color: var(--clay) !important;
+  border: 2px solid var(--clay) !important;
+}
+
+.btn-add-cart:hover {
+  background: var(--clay-pale) !important;
+}
+
+.medicine-info-section li:before {
+  color: var(--clay) !important;
+}
