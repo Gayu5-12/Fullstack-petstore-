@@ -3,7 +3,9 @@ import { useNavigate, Link } from "react-router-dom";
 import API from "../api/axios";
 import "../styles/Page.css";
 
+
 function Adopt() {
+  const [selectedColor, setSelectedColor] = useState("");
   const navigate = useNavigate();
 
   const [pets, setPets] = useState([]); // ✅ now comes from backend
