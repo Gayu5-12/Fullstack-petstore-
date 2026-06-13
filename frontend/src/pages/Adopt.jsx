@@ -52,7 +52,6 @@ export default function Adopt() {
   // Filters State Engine
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedBreed, setSelectedBreed] = useState("all");
-  const [selectedColor, setSelectedColor] = useState("all");
   const [maxPrice, setMaxPrice] = useState("all");
 
   const [appointmentForm, setAppointmentForm] = useState({ 

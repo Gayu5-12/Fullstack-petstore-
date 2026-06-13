@@ -4,7 +4,6 @@ import api from "../api/axios";
 import "../styles/Admin.css";
 
 function Admin() {
-  const navigate = useNavigate();
 
   const [users, setUsers] = useState([
     { _id: "u1", name: "Arun Kumar",    email: "arun.kumar@gmail.com" },

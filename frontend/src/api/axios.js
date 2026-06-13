@@ -1,17 +1,8 @@
 import axios from "axios";
 
-const api = axios.create({
-  baseURL: "https://petstore-backend-2.onrender.com/api",
+const API = axios.create({
+  baseURL: process.env.REACT_APP_API_URL,
+  withCredentials: true, // remove if not using cookies
 });
 
-api.interceptors.request.use((config) => {
-  const token = localStorage.getItem("token");
-
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
-  }
-
-  return config;
-});
-
-export default api;
+export default API;
